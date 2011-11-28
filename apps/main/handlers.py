@@ -19,7 +19,7 @@ class PollHandler(JSONMessageHandler):
             cls.quote = subprocess.check_output("fortune", shell=True)
             cls.quote_timer.set()
             cls.quote_timer.clear()
-            cls.quote_timer.wait(3)
+            cls.quote_timer.wait(5)
 
     def get(self):
         self.quote_timer.wait()
