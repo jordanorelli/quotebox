@@ -1,0 +1,13 @@
+<html>
+  <head>{% block head %}
+    <title>{%- block title -%}quotebox{%- endblock -%}</title>
+    {%- block js %}
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    {%- endblock %}
+  {%- endblock %}</head>
+  <body>{%- block body %}
+    {%- block content %}
+    {%- endblock %}
+  {% endblock %}</body>
+</head>
+

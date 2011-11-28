@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block js %}
+{{ super() }}
+<script src="static/js/poll.js"></script>
+<script>
+  $(document).ready(function() {
+    POLL.buildPollBox({
+      quoteContainer: "#quote-container"
+    });
+  });
+</script>
+{% endblock %}
+{%- block content %}
+  <h1>quotebox.</h1>
+  <p id="quote-container"></p>
+{%- endblock %}
