@@ -7,7 +7,7 @@ import handlers
 import os
 import sys
 
-Greenlet.spawn(handlers.PollHandler.loop)
+Greenlet.spawn(handlers.PollHandler.loop, delay=5)
 
 config = {
     'mongrel2_pair': ('ipc://run/mongrel2_send', 'ipc://run/mongrel2_recv'),
