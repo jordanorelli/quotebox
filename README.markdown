@@ -17,7 +17,7 @@ substitute the call to `fortune` for a different quote-generating strategy.
 [yum](http://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified), or
 [homebrew](http://mxcl.github.com/homebrew/) if you're on OS X.
 
-==== How It Works
+## How It Works
 
 Brubeck sits behind [Mongrel2](http://mongrel2.org/), the language-agnostic
 HTTP server by [Zed Shaw](https://github.com/zedshaw).  Mongrel2 takes HTTP
@@ -33,7 +33,7 @@ routes: `/` and `/poll`, which point to the `IndexHandler` and `PollHandler`
 classes, respectively.  The handler classes themselves are defined in
 `apps/main/handlers.py`.
 
-=== The `IndexHandler` handler
+### The `IndexHandler` handler
 
 `IndexHandler` is a pretty standard handler.  All it does is render a
 [Jinja2](http://jinja.pocoo.org/docs/) template to HTML and return it to the
@@ -53,7 +53,7 @@ before and after a template tag using the `{%-` and `-%}` opening and closing
 tags, respectively.  There are more difference between the template engines,
 but they're not illustrated here.
 
-=== The `PollHandler` handler
+### The `PollHandler` handler
 
 `PollHandler` is a bit different.  Unlike most Brubeck handlers (or Django
 views, or Rails controllers), `PollHandler` does not simply respond to each
@@ -87,7 +87,7 @@ that it has a new quote, it wakes up all active poll requests:
 We then use the Event's `wait` method to halt execution of the
 `PollHandler.loop` method for some fixed amount of time.
 
-=== The jQuery client
+### The jQuery client
 
 Finally, the client is a fairly straightforward AJAX script written with
 jQuery.  The client simply sends HTTP GET requests to `/poll`, fades out the
