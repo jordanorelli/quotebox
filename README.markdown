@@ -91,7 +91,11 @@ We then use the Event's `wait` method to halt execution of the
 
 Finally, the client is a fairly straightforward AJAX script written with
 jQuery.  The client simply sends HTTP GET requests to `/poll`, fades out the
-old quote, swaps it with the new quote, and fades it back in.
+old quote, swaps it with the new quote, and fades it back in.  The AJAX call
+itself recurses indefinitely, as defined in the `poll` method's `complete`
+callback.  The client sends its first request on page load.  Every time a
+request times out or is answered, we instantly send a new request, since it's
+assumed that it will be queued on the server.
 
 For installation notes, please refer to the [Brubeck Installation
 Instructions](http://brubeck.io/installing.html), which are quite complete.  If
